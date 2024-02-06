@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sayk</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f5e1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #5c5c5c;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #e8b74d;
+            color: #fff;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button:hover {
+            background-color: #c09333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>App-Cluster</h1>
+    <button class="button" onclick="callSmartContract1()">SC-1</button>
+    <button class="button" onclick="callSmartContract2()">SC-2</button>
+    <button class="button" onclick="callSmartContract3()">SC-3</button>
+</div>
+
+<script>
+    function callSmartContract1() {
+        // Ajoutez la logique pour appeler le Smart Contract 1 ici
+        alert('Appel du Smart Contract 1');
+    }
+
+    function callSmartContract2() {
+        // Ajoutez la logique pour appeler le Smart Contract 2 ici
+        alert('Appel du Smart Contract 2');
+    }
+
+    function callSmartContract3() {
+        // Ajoutez la logique pour appeler le Smart Contract 3 ici
+        alert('Appel du Smart Contract 3');
+    }
+</script>
+
+</body>
+</html>

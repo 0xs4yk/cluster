@@ -19,3 +19,19 @@ spec:
         image: jenkins/jenkins:latest
         ports:
         - containerPort: 8080
+      volumes:
+        - name: jenkins-data
+          persistentVolumeClaim:
+            claimName: jenkins-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-pvc
+  namespace: sayk
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi

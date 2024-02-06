@@ -20,3 +20,19 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+      volumes:
+        - name: nginx-data
+          persistentVolumeClaim:
+            claimName: nginx-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc
+  namespace: sayk
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
