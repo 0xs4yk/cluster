@@ -19,10 +19,13 @@ spec:
         image: jenkins/jenkins:latest
         ports:
         - containerPort: 8080
-      volumes:
+        volumeMounts:   # Ajoutez cette section pour corriger l'indentation
         - name: jenkins-data
-          persistentVolumeClaim:
-            claimName: jenkins-pvc
+          mountPath: "/var/jenkins_home"
+      volumes:
+      - name: jenkins-data
+        persistentVolumeClaim:
+          claimName: jenkins-pvc
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

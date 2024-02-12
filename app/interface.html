@@ -7,19 +7,19 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f5e1;
+            background-color: #ece1d2;
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            block-size: 100vh;
         }
 
         .container {
             text-align: center;
             background-color: #fff;
-            padding: 20px;
+            padding: 100px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -35,7 +35,7 @@
             font-weight: bold;
             text-align: center;
             text-decoration: none;
-            background-color: #e8b74d;
+            background-color: #ece1d2;
             color: #fff;
             border-radius: 5px;
             margin: 10px;
@@ -44,7 +44,7 @@
         }
 
         .button:hover {
-            background-color: #c09333;
+            background-color: #ece1d2;
         }
     </style>
 </head>
@@ -59,8 +59,17 @@
 
 <script>
     function callSmartContract1() {
-        // Ajoutez la logique pour appeler le Smart Contract 1 ici
-        alert('Appel du Smart Contract 1');
+        // Utilisez AJAX pour envoyer une requête au backend Go
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8080/call-smart-contract-1", true);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert('Réponse du backend : ' + xhr.responseText);
+            }
+        };
+
+        xhr.send();
     }
 
     function callSmartContract2() {
